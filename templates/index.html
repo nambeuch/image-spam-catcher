@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image-Spam Catcher</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <h1 class="page-title">Image-Spam Catcher</h1>
+    <div class="upload-container">
+        <form id="uploadForm" action="/" method="post" enctype="multipart/form-data">
+            <label class="drop-area" for="fileInput" id="dropArea">
+                <p>Click to select a file</p>
+                <input type="file" class="file-input" id="fileInput" name="file" accept="image/*">
+            </label>
+            <img id="previewImage" alt="Preview" />
+            <button type="submit" id="submitButton" disabled>Upload</button>
+            <button type="button" id="cancelButton" disabled>Cancel</button>
+        </form>
+    </div>
+    <div class = "upload-container">
+        
+    {% with messages = get_flashed_messages() %}
+	  {% if messages %}
+        <h3 style="color:MediumSeaGreen;">{{ messages[0] }}</h3><br>
+        <img src="{{ messages[1] }}" width="180", height="180">
+       
+	  {% endif %}
+	{% endwith %}
+
+
+    </div>
+
+
+    <footer class="page-footer">
+        &copy; 2023 Image-Spam Catcher
+    </footer>
+    <script src="../static/script.js"></script>
+</body>
+</html>
