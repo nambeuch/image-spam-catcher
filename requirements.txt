@@ -6,3 +6,4 @@ gunicorn
 scikit-learn
 Pillow
 tensorflow-cpu
+autokeras
